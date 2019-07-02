@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="PrototypeGuiCompositor30.MoveScaleAdornerVisualSelected"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PrototypeGuiCompositor30"
+             mc:Ignorable="d" 
+             d:DesignHeight="224.091" d:DesignWidth="239.956"
+              Loaded="OnLoaded"
+             >
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Shape}" x:Key="ThumbCorner2">
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="Stroke" Value="#FFC8C8C8" />
+            <Setter Property="StrokeThickness" Value=".1" />
+            <Setter Property="Width" Value="15" />
+            <Setter Property="Height" Value="15" />
+            <Setter Property="Margin" Value="-6" />
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush Opacity=".7">
+                        <GradientStop Color="Black" Offset="0.2" />
+                        <GradientStop Color="White" Offset="0.9" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+   
+    <Grid Name="PanelContainer" MinHeight="10" MinWidth="10" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--<Rectangle SnapsToDevicePixels="True"
+                         StrokeThickness="0.5"
+                         Margin="1"
+                         Stroke="White"/>-->
+
+
+
+        <!--<Ellipse   Style="{StaticResource ThumbCorner}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-1,-25,0,0"/>-->
+
+        <Rectangle  Style="{StaticResource ThumbCorner2}" HorizontalAlignment="Left"  VerticalAlignment="Top"  />
+
+        <Rectangle  Style="{StaticResource ThumbCorner2}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="16"/>
+        <Rectangle  Style="{StaticResource ThumbCorner2}" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="16"/>
+
+        <Rectangle  Style="{StaticResource ThumbCorner2}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Width="16"/>
+
+        <Rectangle  Style="{StaticResource ThumbCorner2}" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Rectangle  Style="{StaticResource ThumbCorner2}" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <Rectangle  Style="{StaticResource ThumbCorner2}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
+
+        <Rectangle  Style="{StaticResource ThumbCorner2}" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="16"/>
+
+
+        <Thumb  HorizontalAlignment="Right" VerticalAlignment="Bottom"  x:Name="myThumb" Opacity="0" Background="Transparent" DragDelta="OnDragDelta" 
+            DragStarted="OnDragStarted" DragCompleted="OnDragCompleted"  Height="15" Width="15"   MouseEnter="Move_MouseEnter"   MouseLeave="Move_MouseLeave" Grid.ColumnSpan="2"
+          />
+
+
+
+
+        <Thumb   HorizontalAlignment="Center" VerticalAlignment="Top"  x:Name="myThumb22" Opacity="0" Background="Transparent" DragDelta="OnDragDelta" 
+            DragStarted="OnDragStarted" DragCompleted="OnDragCompleted"  Height="15" Width="16"    MouseEnter="Move_MouseEnter"   MouseLeave="Move_MouseLeave"
+          />
+
+        <Thumb  HorizontalAlignment="Center" VerticalAlignment="Bottom"  x:Name="myThumb33" Opacity="0" Background="Transparent" DragDelta="OnDragDelta" 
+            DragStarted="OnDragStarted" DragCompleted="OnDragCompleted"  Height="15" Width="16"   MouseEnter="Move_MouseEnter"   MouseLeave="Move_MouseLeave"
+          />
+
+
+
+
+        <Thumb  HorizontalAlignment="Right" VerticalAlignment="Center"  x:Name="myThumb2" Opacity="0" Background="Transparent" DragDelta="OnDragDelta" 
+            DragStarted="OnDragStarted" DragCompleted="OnDragCompleted"  Height="16" Width="15"    MouseEnter="Move_MouseEnter"   MouseLeave="Move_MouseLeave" Grid.ColumnSpan="2"
+          />
+
+        <Thumb  HorizontalAlignment="Right" VerticalAlignment="top"  x:Name="myThumb3" Opacity="0" Background="Transparent" DragDelta="OnDragDelta" 
+            DragStarted="OnDragStarted" DragCompleted="OnDragCompleted"  Height="15" Width="15"   MouseEnter="Move_MouseEnter"   MouseLeave="Move_MouseLeave" Grid.ColumnSpan="2" 
+          />
+
+
+        <Thumb  HorizontalAlignment="Left" VerticalAlignment="Bottom"  x:Name="myThumb4" Opacity="0" Background="Transparent" DragDelta="OnDragDelta" 
+            DragStarted="OnDragStarted" DragCompleted="OnDragCompleted"  Height="15" Width="15"  MouseEnter="Move_MouseEnter"   MouseLeave="Move_MouseLeave"
+          />
+
+        <Thumb  HorizontalAlignment="Left" VerticalAlignment="Center"  x:Name="myThumb5"   Opacity="0" Background="Transparent" DragDelta="OnDragDelta" 
+            DragStarted="OnDragStarted" DragCompleted="OnDragCompleted"  Height="16" Width="15"    MouseEnter="Move_MouseEnter"   MouseLeave="Move_MouseLeave"
+          />
+
+        <Thumb  HorizontalAlignment="Left" VerticalAlignment="top"  x:Name="myThumb6" Opacity="0" Background="Transparent" DragDelta="OnDragDelta" 
+            DragStarted="OnDragStarted" DragCompleted="OnDragCompleted"  Height="15" Width="15"   MouseEnter="Move_MouseEnter"   MouseLeave="Move_MouseLeave"
+          />
+
+    </Grid>
+</UserControl>

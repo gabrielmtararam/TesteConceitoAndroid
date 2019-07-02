@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{963B9C8F-799F-465E-BF77-DF6CA7AC89AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PrototypeGuiCompositor30</RootNamespace>
+    <AssemblyName>PrototypeGuiCompositor30</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DynamicDictionary.cs" />
+    <Compile Include="Manager\ActControlManager.cs" />
+    <Compile Include="ActScreenManager.cs" />
+    <Compile Include="Adorners\MoveAdorner.cs" />
+    <Compile Include="Adorners\DragNDropAdorner.cs" />
+    <Compile Include="Adorners\MoveScaleAdornerSelected.cs" />
+    <Compile Include="Adorners\MoveScaleAdorner.cs" />
+    <Compile Include="Adorners\rotateAdorner.cs" />
+    <Compile Include="Adorners\SimpleCircleAdorner.cs" />
+    <Compile Include="AdornerVisual\DragNDropAdornerVisual.xaml.cs">
+      <DependentUpon>DragNDropAdornerVisual.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdornerVisual\MoveScaleAdornerVisualSelected.xaml.cs">
+      <DependentUpon>MoveScaleAdornerVisualSelected.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdornerVisual\MoveScaleAdornerVisual.RoutedEvents.cs" />
+    <Compile Include="AdornerVisual\MoveScaleAdornerVisual.xaml.cs">
+      <DependentUpon>MoveScaleAdornerVisual.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdornerVisual\rotateAdornerVisual.xaml.cs">
+      <DependentUpon>rotateAdornerVisual.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\CommandManager.cs" />
+    <Compile Include="Commands\ChangeScreenNameCommand.cs" />
+    <Compile Include="Commands\InsertButtonCommand.cs" />
+    <Compile Include="Commands\MoveCommand.cs" />
+    <Compile Include="Commands\RotateCommand.cs" />
+    <Compile Include="Commands\ScaleElementCommand.cs" />
+    <Compile Include="Commands\SelectScreenCommand.cs" />
+    <Compile Include="DataModels\ElementContentDataModel.cs" />
+    <Compile Include="DefaultEventArgs.cs" />
+    <Compile Include="elements\SimpleTextImageElement.cs" />
+    <Compile Include="eventHanddlers\DragNDropEventHandler.cs" />
+    <Compile Include="eventHanddlers\MoveEventHandler.cs" />
+    <Compile Include="eventHanddlers\RotateEventHandler.cs" />
+    <Compile Include="eventHanddlers\ScaleEventHandler.cs" />
+    <Compile Include="factory\ControlsFactory.cs" />
+    <Compile Include="factory\ScreensFactory.cs" />
+    <Compile Include="ImageRender.cs" />
+    <Compile Include="interfaces\ICommand.cs" />
+    <Compile Include="interfaces\IContent.cs" />
+    <Compile Include="interfaces\IContentControl.cs" />
+    <Compile Include="interfaces\ICanvasContentControl.cs" />
+    <Compile Include="interfaces\IMovable.cs" />
+    <Compile Include="interfaces\IRotatable.cs" />
+    <Compile Include="interfaces\IScalable.cs" />
+    <Compile Include="interfaces\IScreen.cs" />
+    <Compile Include="Manager\InstersecElementManager.cs" />
+    <Compile Include="MoveCalculator.cs" />
+    <Compile Include="MultiLineTextEditor.cs" />
+    <Compile Include="Manager\ProgramManager.cs" />
+    <Compile Include="AdornerVisual\rotateAdornerVisual.routedEvents.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Screens\DefaultScreen.cs" />
+    <Compile Include="TransformationsEventHandler.cs" />
+    <Compile Include="TransformationsRoutedEventHandler.cs" />
+    <Compile Include="UserControls\CanvasContentControl.RoutedEvents.cs" />
+    <Compile Include="UserControls\CanvasContainerControl.xaml.cs">
+      <DependentUpon>CanvasContainerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CustomFilePicker.xaml.cs">
+      <DependentUpon>CustomFilePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CustomTextBox.xaml.cs" />
+    <Compile Include="UserControls\DragNDropContentControl.xaml.cs">
+      <DependentUpon>DragNDropContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DragNDropSideBar.xaml.cs">
+      <DependentUpon>DragNDropSideBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SimpleButton.cs" />
+    <Page Include="AdornerVisual\DragNDropAdornerVisual.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdornerVisual\MoveScaleAdornerVisualSelected.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdornerVisual\MoveScaleAdornerVisual.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdornerVisual\rotateAdornerVisual.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CanvasContainerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CustomFilePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CustomTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\DragNDropContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CanvasContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserControls\CanvasContentControl.xaml.cs">
+      <DependentUpon>CanvasContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UserControls\DragNDropSideBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="interfaces\IController.cs" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-add-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-add-text-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-apagar-para-sempre-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-button-50%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-button-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-copy-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-eye-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-eye-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-full-image-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-gire-para-a-esquerda-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-group-objects-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-hide-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-hide-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-ios-application-placeholder-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-move-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-opacity-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-paste-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-push-pin-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-redimensionar-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-redo-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-rounded-rectangle-stroked-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-square-filled-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-undo-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-unpin-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-checked-checkbox-32.png" />
+    <Resource Include="images\icons8-checked-checkbox-64.png" />
+    <Resource Include="images\icons8-unchecked-checkbox-32.png" />
+    <Resource Include="images\icons8-unchecked-checkbox-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Desktop\wpg\sourceCode\sourceCode\WPGBrushEditor\WPGBrushEditor.csproj">
+      <Project>{e26bc89b-3b66-4e96-8fe2-655bd10cfb1b}</Project>
+      <Name>WPGBrushEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Desktop\wpg\sourceCode\sourceCode\WPG\WPG.csproj">
+      <Project>{022eda6a-0b76-44c3-a530-8312c1b40030}</Project>
+      <Name>WPG</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
